@@ -6,6 +6,7 @@ import { HistoriaComponent } from './menu/historia/historia.component';
 import { ReservasComponent } from './menu/reservas/reservas.component';
 import { UnidadesComponent } from './menu/unidades/unidades.component';
 import { ContatoComponent } from './menu/contato/contato.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
     { path: 'cardapios', component: CardapiosComponent },
@@ -14,4 +15,5 @@ export const routes: Routes = [
     { path: 'reservas', component: ReservasComponent },
     { path: 'unidades', component: UnidadesComponent },
     { path: 'contato', component: ContatoComponent},
+    {path: '', component: HomeComponent}
 ];
