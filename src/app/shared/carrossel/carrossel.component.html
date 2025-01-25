@@ -1,14 +1,6 @@
-<div class="carousel-container">
-  <div class="carousel-slide">
-    <img 
-      [src]="images[activeIndex]" 
-      alt="Imagem do carrossel"
-      class="carousel-image"
-      (mouseenter)="timerSubscription.unsubscribe()"
-      (mouseleave)="startTimer()"
-    >
-  </div>
-  
-  <button class="carousel-control prev" (click)="prevImage()">‹</button>
-  <button class="carousel-control next" (click)="nextImage()">›</button>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="carousel-container" [style.backgroundImage]="'url('+images[activeIndex]+')'">
+  <i (click)="prevImage()" class="material-icons next">chevron_left</i>
+  <i (click)="nextImage()" class="material-icons prev">chevron_right</i>
 </div>

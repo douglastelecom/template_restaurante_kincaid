@@ -10,9 +10,9 @@ import { interval, Subscription } from 'rxjs';
 })
 export class CarrosselComponent implements OnInit, OnDestroy {
   images = [
-    'assets/images/background header 2.png',
-    'assets/images/background header.png',
-    'assets/images/background.jpg'
+    'assets/images/carrossel/carrossel-1.jpeg',
+    'assets/images/carrossel/carrossel-2.jpeg',
+    'assets/images/carrossel/carrossel-3.png'
   ];
   activeIndex = 0;
   timerSubscription!: Subscription;
@@ -22,6 +22,10 @@ export class CarrosselComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.stopTimer();
+  }
+
+  stopTimer(){
     if (this.timerSubscription) {
       this.timerSubscription.unsubscribe();
     }
@@ -29,15 +33,23 @@ export class CarrosselComponent implements OnInit, OnDestroy {
 
   startTimer() {
     this.timerSubscription = interval(5000).subscribe(() => {
-      this.nextImage();
+      this.activeIndex = (this.activeIndex + 1) % this.images.length;
     });
   }
 
   nextImage() {
+    this.stopTimer();
     this.activeIndex = (this.activeIndex + 1) % this.images.length;
+    setTimeout(()=>{
+      this.startTimer()}, 5000
+    )
   }
 
   prevImage() {
+    this.stopTimer();
     this.activeIndex = (this.activeIndex - 1 + this.images.length) % this.images.length;
+    setTimeout(()=>{
+      this.startTimer()}, 5000
+    )
   }
 }
