@@ -1,80 +1,227 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
 
 /* You can add global styles to this file, and also import other style files */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
 	vertical-align: baseline;
-    font-family: "Cormorant", sans-serif;
+	font-family: "Cormorant", sans-serif;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-input, select{
-  border:none;
-    background-image:none;
-    background-color:transparent;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+
+input,
+select {
+	border: none;
+	background-image: none;
+	background-color: transparent;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
 }
 
-:root{
-    --primary-darkest-color: #101b2f;
-    --primary-dark-color: #14203A;
-    --primary-light-color: #7B9FCF;
+:root {
+	--primary-darkest-color: #101b2f;
+	--primary-dark-color: #14203A;
+	--primary-light-color: #7B9FCF;
 }
-body{
+
+body {
 	overflow-x: hidden;
+	font-size: 18px;
+	color: var(--primary-dark-color);
 }
 
-.template{
+.template {
 	width: 100vw;
 	height: 100vh;
 }
 
-.papel-de-parede{
-	font-weight: 400;
+.papel-de-parede {
+	font-weight: 300;
 	letter-spacing: 1px;
 	background-repeat: repeat;
 	background-position: top left;
 	background-image: url('/assets/images/papel de parede.png');
 }
 
-
 //TEMPLATE
 
+//botão
+.home-imagem-texto {
+	height: 65vh;
+	display: flex;
+	flex-direction: row;
+	h2 {
+		font-size: 2.75rem;
+		color: var(--primary-dark-color);
+	}
+
+	p {
+		font-weight: 600;
+	}
+
+	.home-texto{
+		width: 50vw !important;
+		max-width: 50vw !important;
+		min-width: 0vw !important;
+		padding: 8rem 7rem;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column !important;
+		gap: 40px;
+		p{
+			font-weight: 600;
+			font-size: 19px;
+		}
+	}
+
+	.home-imagem{
+		display: flex;
+		width: 50vw !important;
+		max-width: 50vw !important;
+		align-items: center !important;
+		justify-content: center !important;
+		img{
+			width: 50vw !important;
+			height: 50vh !important;
+		}
+	}
+
+	.blue-background-transition {
+		background-color: var(--primary-light-color) !important;
+		padding: 9px 27px !important;
+		color: var(--primary-dark-color) !important;
+		font-weight: 600;
+		cursor: pointer;
+		&:hover {
+			background-color: var(--primary-dark-color) !important;
+			transition: background-color .4s ease !important;
+			color: white !important;
+		}
+	}
+}
