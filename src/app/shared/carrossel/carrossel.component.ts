@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { interval, Subscription } from 'rxjs';
 
@@ -9,16 +9,14 @@ import { interval, Subscription } from 'rxjs';
   styleUrl: './carrossel.component.scss'
 })
 export class CarrosselComponent implements OnInit, OnDestroy {
-  images = [
-    'assets/images/carrossel/carrossel-1.jpeg',
-    'assets/images/carrossel/carrossel-2.jpeg',
-    'assets/images/carrossel/carrossel-3.png'
-  ];
+
+  @Input() paths!: string[];
+  
   activeIndex = 0;
   timerSubscription!: Subscription;
 
   ngOnInit() {
-    this.startTimer();
+    this.startTimer(5000);
   }
 
   ngOnDestroy() {
@@ -31,25 +29,21 @@ export class CarrosselComponent implements OnInit, OnDestroy {
     }
   }
 
-  startTimer() {
-    this.timerSubscription = interval(5000).subscribe(() => {
-      this.activeIndex = (this.activeIndex + 1) % this.images.length;
+  startTimer(time: number) {
+    this.timerSubscription = interval(time).subscribe(() => {
+      this.activeIndex = (this.activeIndex + 1) % this.paths.length;
     });
   }
 
   nextImage() {
     this.stopTimer();
-    this.activeIndex = (this.activeIndex + 1) % this.images.length;
-    setTimeout(()=>{
-      this.startTimer()}, 5000
-    )
+    this.activeIndex = (this.activeIndex + 1) % this.paths.length;
+    this.startTimer(5000);
   }
 
   prevImage() {
     this.stopTimer();
-    this.activeIndex = (this.activeIndex - 1 + this.images.length) % this.images.length;
-    setTimeout(()=>{
-      this.startTimer()}, 5000
-    )
+    this.activeIndex = (this.activeIndex - 1 + this.paths.length) % this.paths.length;
+    this.startTimer(5000);
   }
 }

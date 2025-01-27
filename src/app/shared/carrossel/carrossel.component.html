@@ -1,6 +1,11 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<div class="carousel-container" [style.backgroundImage]="'url('+images[activeIndex]+')'">
+<div class="carousel-container" [style.backgroundImage]="'url('+paths[activeIndex]+')'">
   <i (click)="prevImage()" class="material-icons next">chevron_left</i>
   <i (click)="nextImage()" class="material-icons prev">chevron_right</i>
 </div>
+
+
+@for (path of paths; track path ) {
+  <img width="0" height="0" [src]="path" alt="">
+}

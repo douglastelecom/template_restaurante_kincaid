@@ -9,4 +9,9 @@ import { CarrosselComponent } from '../shared/carrossel/carrossel.component';
 })
 export class HomeComponent {
 
+    paths: string[] = [
+       'assets/images/carrossel/carrossel-1.jpeg',
+       'assets/images/carrossel/carrossel-2.jpeg',
+       'assets/images/carrossel/carrossel-3.png'
+    ];
 }
