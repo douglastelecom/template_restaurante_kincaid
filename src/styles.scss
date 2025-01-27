@@ -88,6 +88,8 @@ video {
 	font-size: 100%;
 	vertical-align: baseline;
 	font-family: "Cormorant", sans-serif;
+	letter-spacing: 1px;
+	font-weight: 600;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -152,6 +154,7 @@ body {
 	overflow-x: hidden;
 	font-size: 18px;
 	color: var(--primary-dark-color);
+	font-weight: 600;
 }
 
 .template {
@@ -160,8 +163,6 @@ body {
 }
 
 .papel-de-parede {
-	font-weight: 300;
-	letter-spacing: 1px;
 	background-repeat: repeat;
 	background-position: top left;
 	background-image: url('/assets/images/papel de parede.png');
@@ -169,59 +170,42 @@ body {
 
 //TEMPLATE
 
-//botão
-.home-imagem-texto {
-	height: 65vh;
-	display: flex;
-	flex-direction: row;
-	h2 {
-		font-size: 2.75rem;
-		color: var(--primary-dark-color);
-	}
+//título grande
+.t1-dark-blue{
+	font-size: 3rem;
+	color: var(--primary-dark-color);
+}
+.t1-white{
+	font-size: 3rem;
+	color: white;
+}
+//título médio
+.t2-dark-blue{
+	font-size: 1.25rem;
+	color: var(--primary-dark-color);
+}
+.t2-white{
+	font-size: 1.25rem;
+	color: white;
+}
+//legenda de imagem
+.dark-blue-image-label{
+	background-color: var(--primary-dark-color);
+	padding: 15px 30px;
+	position: absolute;
+	top: 54.8vh;
+	left: 0;
+}
 
-	p {
-		font-weight: 600;
-	}
-
-	.home-texto{
-		width: 50vw !important;
-		max-width: 50vw !important;
-		min-width: 0vw !important;
-		padding: 8rem 7rem;
-		box-sizing: border-box;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column !important;
-		gap: 40px;
-		p{
-			font-weight: 600;
-			font-size: 19px;
-		}
-	}
-
-	.home-imagem{
-		display: flex;
-		width: 50vw !important;
-		max-width: 50vw !important;
-		align-items: center !important;
-		justify-content: center !important;
-		img{
-			width: 50vw !important;
-			height: 50vh !important;
-		}
-	}
-
-	.blue-background-transition {
-		background-color: var(--primary-light-color) !important;
-		padding: 9px 27px !important;
-		color: var(--primary-dark-color) !important;
-		font-weight: 600;
-		cursor: pointer;
-		&:hover {
-			background-color: var(--primary-dark-color) !important;
-			transition: background-color .4s ease !important;
-			color: white !important;
-		}
+//botão com background azul
+.blue-background-transition {
+	background-color: var(--primary-light-color) !important;
+	padding: 9px 27px !important;
+	color: var(--primary-dark-color) !important;
+	cursor: pointer;
+	&:hover {
+		background-color: var(--primary-dark-color) !important;
+		transition: background-color .4s ease !important;
+		color: white !important;
 	}
 }
