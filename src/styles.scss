@@ -189,12 +189,20 @@ body {
 	color: white;
 }
 //legenda de imagem
-.dark-blue-image-label{
+.dark-blue-image-label-left{
 	background-color: var(--primary-dark-color);
 	padding: 15px 30px;
 	position: absolute;
 	top: 54.8vh;
 	left: 0;
+}
+
+.dark-blue-image-label-right{
+	background-color: var(--primary-dark-color);
+	padding: 15px 30px;
+	position: absolute;
+	top: 54.8vh;
+	right: 0;
 }
 
 //botão com background azul
